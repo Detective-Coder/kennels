@@ -9,6 +9,8 @@ import {CustomerList} from "./customer/CustomerList"
 import {CustomerProvider} from "./customer/CustomerProvider"
 import { EmployeeProvider } from "./employee/EmployeeProvider"
 import { EmployeeList } from "./employee/EmployeeList"
+import { LocationProvider } from "./location/LocationProvider"
+import { LocationList } from "./location/LocationList"
 
 export const ApplicationViews = () => {
     return (
@@ -36,10 +38,11 @@ export const ApplicationViews = () => {
               </Route>
             </EmployeeProvider>
 
-            {/* Render the location list when http://localhost:3000/locations */}
-            <Route path="/locations">
-                <LocationCard />
-            </Route>
+            <LocationProvider>
+              <Route path="/locations">
+                <LocationList />
+              </Route>
+            </LocationProvider>
         </>
     )
 }
