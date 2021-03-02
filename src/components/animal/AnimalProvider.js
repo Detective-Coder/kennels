@@ -13,15 +13,15 @@ export const AnimalProvider = (props) => {
         .then(setAnimals)
     }
 
-    const addAnimal = animalObj => {
+    const addAnimal = animal => {
         return fetch("http://localhost:8088/animals", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(animalObj)
+            body: JSON.stringify(animal)
         })
-        .then(getAnimals)
+        .then(reponse => Response.json)
     }
 
     /*

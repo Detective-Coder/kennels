@@ -25,14 +25,14 @@ export const AnimalList = () => {
   return (
     <>
       <h2>Animals</h2>
-      <button onClick={() => {history.push("./animals/create")}}>
+      <button onClick={() => {history.push("/animals/create")}}>
         Add Animal
       </button>
       <div className="animals">
         {
           animals.map(animal => {
-            const owner = customers.find(c => c.id === animal.customerId)
-            const clinic = locations.find(l => l.id === animal.locationId)
+            const owner = customers.find(c => c.id === parseInt(animal.customerId))
+            const clinic = locations.find(l => l.id === parseInt(animal.locationId))
 
             return <AnimalCard key={animal.id}
                           location={clinic}

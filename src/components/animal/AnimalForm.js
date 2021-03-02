@@ -54,7 +54,7 @@ export const AnimalForm = () => {
       } else {
         // invoke addAnimal passing animal as an argument. Once complete, change the url and display the animal list
         addAnimal(animal)
-        .then(() => history.push("./animals"))
+        .then(() => history.push("/animals"))
       }
     }
 
@@ -67,6 +67,36 @@ export const AnimalForm = () => {
             <input type="text" id="name" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Animal name" value={animal.name}/>
           </div>
         </fieldset>
+        <fieldset>
+          <div className="form-group">
+            <label htmlFor="location">Assign to locations: </label>
+            <select onChange={handleControlledInputChange} defaultValue={animal.locationId} name="locationId" id="locationId" className="form-control">
+              <option value="0">Select a location</option>
+              {locations.map(l => (
+                <option key={l.id} value={l.id}>
+                  {l.name}
+                </option>
+              ))}
+            </select>
+          </div>
+        </fieldset>
+        <fieldset>
+          <div className="form-group">
+            <label htmlFor="customerId">Customer: </label>
+            <select onChange={handleControlledInputChange} defaultValue={animal.customerId} name="customer" id="customerId" className="form-control">
+              <option value="0">Select a customer</option>
+              {customers.map(c => (
+                <option key={c.id} value={c.id}>
+                  {c.name}
+                </option>
+              ))}
+            </select>
+          </div>
+        </fieldset>
+        <button className="btn btn-primary"
+          onClick={handleClickSaveAnimal}>
+            Save Animal
+          </button>
       </form>
     )
 }
