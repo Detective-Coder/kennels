@@ -3,6 +3,7 @@ import { AnimalContext } from "./AnimalProvider"
 import {LocationContext} from "../location/LocationProvider"
 import {CustomerContext} from "../customer/CustomerProvider"
 import { AnimalCard } from "./AnimalCard"
+import {useHistory} from "react-router-dom"
 import "./Animal.css"
 
 export const AnimalList = () => {
@@ -19,20 +20,27 @@ export const AnimalList = () => {
     .then(getAnimals)
   }, [])
 
+  const history = useHistory()
 
   return (
-    <div className="animals">
-      {
-        animals.map(animal => {
-          const owner = customers.find(c => c.id === animal.customerId)
-          const clinic = locations.find(l => l.id === animal.locationId)
+    <>
+      <h2>Animals</h2>
+      <button onClick={() => {history.push("./animals/create")}}>
+        Add Animal
+      </button>
+      <div className="animals">
+        {
+          animals.map(animal => {
+            const owner = customers.find(c => c.id === animal.customerId)
+            const clinic = locations.find(l => l.id === animal.locationId)
 
-          return <AnimalCard key={animal.id}
-                        location={clinic}
-                        customer={owner}
-                        animal={animal} />
-        })
-      }
-    </div>
+            return <AnimalCard key={animal.id}
+                          location={clinic}
+                          customer={owner}
+                          animal={animal} />
+          })
+        }
+      </div>
+    </>
   )
 }
