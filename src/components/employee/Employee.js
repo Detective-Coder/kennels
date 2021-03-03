@@ -1,9 +1,13 @@
 import React from "react"
 import "./Employee.css"
+import {Link} from "react-router-dom"
 
-export const EmployeeCard = ({employee, location}) => (
+export const EmployeeCard = ({employee}) => (
     <section className="employee">
-        <h3 className="employee__name">Name: {employee.name}</h3>
-        <p className="employee__location">Location: {location.name}</p>
+        <h3 className="employee__name">
+          <Link to={`/employees/detail/${employee.id}`}>
+            {employee.name}
+          </Link>
+        </h3>
     </section>
 )

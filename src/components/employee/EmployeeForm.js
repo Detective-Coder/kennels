@@ -6,7 +6,6 @@ import {useHistory} from "react-router-dom"
 export const EmployeeForm = () => {
   const {addEmployee} = useContext(EmployeeContext)
   const {locations, getLocations} = useContext(LocationContext)
-  const {employees, getEmployees} = useContext(EmployeeContext)
 
    /*
     With React, we do not target the DOM with `document.querySelector()`. Instead, our return (render) reacts to state or props.
@@ -79,7 +78,7 @@ export const EmployeeForm = () => {
         <button className="btn btn-primary"
           onClick={handleClickSaveEmployee}>
             Save Employee
-          </button>
+        </button>
       </form>
     )
 }
