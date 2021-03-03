@@ -1,8 +1,6 @@
 import React from "react"
 import { Route } from "react-router-dom"
 import { Home } from "./Home"
-import { EmployeeCard } from "./employee/Employee"
-import { LocationCard } from "./location/Location"
 import { AnimalProvider } from "./animal/AnimalProvider"
 import { AnimalList } from "./animal/AnimalList"
 import {CustomerList} from "./customer/CustomerList"
@@ -13,6 +11,7 @@ import { LocationProvider } from "./location/LocationProvider"
 import { LocationList } from "./location/LocationList"
 import {AnimalForm} from "./animal/AnimalForm"
 import {EmployeeForm} from "./employee/EmployeeForm"
+import {AnimalDetail} from "./animal/AnimalDetail"
 
 export const ApplicationViews = () => {
     return (
@@ -38,6 +37,9 @@ export const ApplicationViews = () => {
                   <Route exact path="/animals/create">
                     <AnimalForm />
                   </Route>
+                  <Route exact path="/animals/detail/:animalId(\d+)">
+                    <AnimalDetail />
+                  </Route>
                 </LocationProvider>
               </CustomerProvider>
             </AnimalProvider>
@@ -54,8 +56,8 @@ export const ApplicationViews = () => {
                   <EmployeeForm />
                 </Route>
                 <Route path="/employees">
-                <EmployeeList />
-              </Route>
+                  <EmployeeList />
+                </Route>
               </LocationProvider>
             </EmployeeProvider>
 
@@ -64,6 +66,8 @@ export const ApplicationViews = () => {
                 <LocationList />
               </Route>
             </LocationProvider>
+
+           
         </>
     )
 }
