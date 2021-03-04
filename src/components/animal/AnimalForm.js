@@ -45,7 +45,7 @@ export const AnimalForm = () => {
 
     const handleClickSaveAnimal = (event) => {
       event.preventDefault() //Prevents the browser from submitting the form
-
+      animal.locationId = +animal.locationId
       const locationId = parseInt(animal.locationId)
       const customerId = parseInt(animal.customerId)
 
