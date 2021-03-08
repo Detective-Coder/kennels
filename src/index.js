@@ -1,31 +1,3 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import './index.css';
-// import App from './App';
-// import reportWebVitals from './reportWebVitals';
-
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
-
-// // If you want to start measuring performance in your app, pass a function
-// // to log results (for example: reportWebVitals(console.log))
-// // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-// reportWebVitals();
-
-// import React from "react"
-// import ReactDOM from "react-dom"
-// import { Kennel } from "./components/Kennel"
-
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <Kennel />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
 
 import React from "react"
 import ReactDOM from "react-dom"
@@ -33,9 +5,19 @@ import { BrowserRouter as Router } from "react-router-dom"
 import { Kennel } from "./components/Kennel.js"
 import "./index.css"
 
+// Render a React element into the DOM in the supplied container 
+// is Router the supplied container? or is document.getElementById("root")?
+// StrictMode is a tool for highlighting potential problems in an application. Like Fragment, StrictMode does not render any visible UI. It activates additional checks and warnings for its descendants
+// You can enable strict mode for any part of your application
+// StrictMode currently helps with:
+// Identifying components with unsafe lifecycles
+// Warning about legacy string ref API usage
+// Warning about deprecated findDOMNode usage
+// Detecting unexpected side effects
+// Detecting legacy context API
 ReactDOM.render(
     <React.StrictMode>
-        <Router>
+        <Router> 
             <Kennel />
         </Router>
     </React.StrictMode>,
