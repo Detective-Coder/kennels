@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react"
 import { LocationContext } from "./LocationProvider"
+import "./Location.css"
 import { useParams, useHistory } from "react-router-dom"
 
 export const LocationDetail = () => {
@@ -22,9 +23,13 @@ export const LocationDetail = () => {
       <section className="location">
         <h3 className="location__name">{location.name}</h3>
         <div className="location__animals">Animals: {location.animals?.map(animal =>
-          <p>{animal.name}</p>)}</div>
+          <p>{animal.name}</p>)}
+        </div>
         <div className="location__employees">Employees: {location.employees?.map(employee =>
         <p>{employee.name}</p>)}</div>
+        <button onClick={() => {
+          history.push(`/locations/edit/${location.id}`)
+        }}>Edit</button>
       </section>
     </>
   )
