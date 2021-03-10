@@ -9,5 +9,6 @@ export const EmployeeCard = ({employee}) => (
             {employee.name}
           </Link>
         </h3>
+        <div className="employee_location">{employee.locationId}</div>
     </section>
 )

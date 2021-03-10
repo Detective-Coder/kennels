@@ -5,7 +5,7 @@ import "./Location.css"
 import {useHistory} from "react-router-dom"
 
 export const LocationList = () => {
-  // This state changes when `getAnimals()` is invoked below
+  // This state changes when `getLocations()` is invoked below
   const { locations, getLocations } = useContext(LocationContext)
   const history = useHistory()
 

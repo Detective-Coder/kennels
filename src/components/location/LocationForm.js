@@ -59,7 +59,7 @@ export const LocationForm = () => {
       <fieldset>
         <div className="form-group">
           <label htmlFor="name">Location name:</label>
-          <input type="text" id="name" name="name" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Employee name" defaultValue={location.name}/>
+          <input type="text" id="name" name="name" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Location name" defaultValue={location.name}/>
         </div>
       </fieldset>
       <button className="btn btn-primary"
